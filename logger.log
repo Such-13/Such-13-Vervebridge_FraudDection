@@ -1,0 +1,17 @@
+2024-06-24 19:33:00,563 - logs - INFO - Loading and preprocessing data
+2024-06-24 19:33:01,649 - logs - INFO - First 5 rows of the dataset:
+   step       customer  age gender zipcodeOri       merchant zipMerchant             category  amount  fraud
+0     0  'C1093826151'  '4'    'M'    '28007'   'M348934600'     '28007'  'es_transportation'    4.55      0
+1     0   'C352968107'  '2'    'M'    '28007'   'M348934600'     '28007'  'es_transportation'   39.68      0
+2     0  'C2054744914'  '4'    'F'    '28007'  'M1823072687'     '28007'  'es_transportation'   26.89      0
+3     0  'C1760612790'  '3'    'M'    '28007'   'M348934600'     '28007'  'es_transportation'   17.25      0
+4     0   'C757503768'  '5'    'M'    '28007'   'M348934600'     '28007'  'es_transportation'   35.72      0
+2024-06-24 19:33:09,680 - logs - INFO - Training K-Nearest Neighbours model
+2024-06-24 19:33:11,314 - logs - INFO - Training Random Forest model
+2024-06-24 19:33:38,830 - logs - INFO - Training XGBoost model
+2024-06-24 19:33:45,872 - logs - INFO - Evaluating K-Nearest Neighbours
+2024-06-24 19:34:04,045 - logs - INFO - Evaluating Random Forest Classifier
+2024-06-24 19:34:07,875 - logs - INFO - Evaluating XGBoost Classifier
+2024-06-24 19:34:10,661 - logs - INFO - Creating and training ensemble model
+2024-06-24 19:34:58,231 - logs - INFO - Evaluating Ensemble Model
+2024-06-24 19:35:15,244 - logs - INFO - Base score we must beat is: 98.789189
