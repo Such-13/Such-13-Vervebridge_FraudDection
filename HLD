@@ -1,0 +1,82 @@
+ High-Level Design (HLD) 
+
++------------------------------------------+
+|             Client Interface             |
+|             (Web Browser)                |
++------------------------------------------+
+                      |
+                      | HTTP Requests (Form Submit)
+                      |
+                      v
++------------------------------------------+
+|             Flask Application             |
+|             (server.py)                   |
++------------------------------------------+
+|               |                          |
+|               |                          |
+|               v                          |
+|    +-------------------+                 |
+|    |    Data Storage   |                 |
+|    |   (bank_dataset   |                 |
+|    |       .csv)       |                 |
+|    +-------------------+                 |
+|                          +--------------|-------------+
+|                          |              |             |
+|               +----------|--------------|-------------|
+|               |          |              |             |
+|               v          v              v             |
+|    +-------------------+  |   +-------------------+   |
+|    | Model and         |  |   | External Files    |   |
+|    | Preprocessing     |  |   | (trained models,   |   |
+|    | (preprocess_new_  |  |   |  HTML templates,   |   |
+|    | input)            |  |   |  static files)     |   |
+|    +-------------------+  |   +-------------------+   |
+|               |          |              |             |
+|               +----------|--------------|-------------|
+|                          |              |             |
+|                +---------|--------------|-------------+
+|                |         v              v
+|                |  +-------------------+ |
+|                |  | Logging           | |
+|                |  | (setup_logger)    | |
+|                |  +-------------------+ |
+|                |                        |
++----------------|------------------------+
+                 |
+                 v
+       +-------------------+
+       | Dependencies      |
+       | (requirements.txt)|
+       +-------------------+
+1 Client Interface (Web Browser) :
+
+Users interact with the application through a web browser, submitting transaction details via a form.
+
+2 Flask Application (server.py):
+
+Handles HTTP requests (GET and POST) from the client.
+Contains routes ('/') for rendering the main page (index.html) and processing form submissions.
+Calls functions for data preprocessing (preprocess_new_input) and model prediction.
+
+3 Data Storage:
+
+Stores transactional data in a CSV file (bank_dataset.csv).
+
+4 Model and Preprocessing:
+
+Model: Trained ensemble model (VotingClassifier with KNN, Random Forest, XGBoost).
+Preprocessing: Converts categorical inputs to numerical using mappings loaded from categorical_mappings.pkl.
+
+5 External Files:
+
+Includes trained machine learning models (trained_ensemble_model.pkl), HTML templates (index.html for web interface), and other static files.
+
+6 Logging (setup_logger):
+
+Configures logging to capture events, errors, and predictions in logger.log.
+Provides detailed information for debugging and monitoring application behavior.
+
+7 Dependencies (requirements.txt):
+
+Lists Python libraries (Flask, joblib, pandas, xgboost, etc.) required for the application.
+Ensures consistent environment setup across different deployments.
