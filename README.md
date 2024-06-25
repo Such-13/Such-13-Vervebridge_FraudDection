@@ -1,6 +1,6 @@
 # Fraud Detection System
 This is task 2 of VerveBridge [2024 June] <br>
-**https://vervebridge-frauddection-7c9b.onrender.com/** <br>
+**https://vervebridge-frauddection.onrender.com** <br>
 This repository contains a complete pipeline for detecting fraudulent transactions using machine learning models. The project involves data preprocessing, model training, evaluation, and deployment of an ensemble model for fraud detection.
 
 ## Table of Contents
